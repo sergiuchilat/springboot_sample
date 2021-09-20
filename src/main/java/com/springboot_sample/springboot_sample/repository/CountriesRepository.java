@@ -41,7 +41,12 @@ public class CountriesRepository {
     }
 
     public String delete(Integer id){
-        this.countries.remove(this.countries.get(id));
-        return "Country deleted";
+        try {
+            this.countries.remove(this.countries.get(id));
+            return "Country deleted";
+        } catch (Exception exception){
+            return "Country not found";
+        }
+
     }
 }
