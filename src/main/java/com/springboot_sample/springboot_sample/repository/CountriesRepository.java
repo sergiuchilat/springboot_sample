@@ -32,11 +32,17 @@ public class CountriesRepository {
         return this.countries.toString();
     }
 
-    public String update(){
-        return "Update Country";
+    public String update(Integer id, String countryName){
+        try {
+            this.countries.set(id, countryName);
+            return "Country updated";
+        } catch (Exception exception){
+            return "Country not found";
+        }
     }
 
-    public String delete(){
-        return "Delete Country";
+    public String delete(Integer id){
+        this.countries.remove(this.countries.get(id));
+        return "Country deleted";
     }
 }

@@ -22,13 +22,13 @@ public class CountryController {
         return countriesRepository.readAll();
     }
 
-    @PutMapping("countries")
-    public String update(){
-        return "Update Country";
+    @PutMapping("countries/{id}")
+    public String update(@PathVariable Integer id, @RequestParam String countryName){
+        return countriesRepository.update(id, countryName);
     }
 
-    @DeleteMapping("countries")
-    public String delete(){
-        return "Delete Country";
+    @DeleteMapping("countries/{id}")
+    public String delete(@PathVariable Integer id){
+        return countriesRepository.delete(id);
     }
 }
