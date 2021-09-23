@@ -42,12 +42,20 @@ public class City {
         this.countryId = countryId;
     }
 
+    //todo
+
+    public String getCountyName(){
+        //todo to implement this method
+        return "Noname";
+    }
+
     @Override
     public String toString() {
         return "City{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", countryId=" + countryId +
+                ", countryName=" + this.getCountyName() +
                 '}';
     }
 }
