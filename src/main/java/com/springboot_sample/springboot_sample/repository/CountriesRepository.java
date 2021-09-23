@@ -1,11 +1,14 @@
 package com.springboot_sample.springboot_sample.repository;
 
 
+import com.springboot_sample.springboot_sample.model.Country;
+
 import java.util.ArrayList;
 
 public class CountriesRepository {
 
     ArrayList<String> countries = new ArrayList<>();
+    ArrayList<Country> countriesModel = new ArrayList<Country>();
 
     public CountriesRepository(){
         this.countries.add("Moldova");
@@ -15,8 +18,12 @@ public class CountriesRepository {
     }
 
     public String create(String countryName){
+        Country country = new Country(countryName);
+        this.countriesModel.add(country);
+
         this.countries.add(countryName);
-        return "Country created";
+        System.out.println(countriesModel);
+        return "Country created 2";
     }
 
     public String read(Integer id){
