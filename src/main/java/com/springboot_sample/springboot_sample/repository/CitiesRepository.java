@@ -11,8 +11,8 @@ public class CitiesRepository {
     public CitiesRepository(){
     }
 
-    public String create(String CityName){
-        City city = new City(CityName);
+    public String create(String CityName, Integer countryId){
+        City city = new City(CityName, countryId);
         this.cities.add(city);
         return "City created";
     }
